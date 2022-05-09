@@ -1,0 +1,25 @@
+{
+  "name": "booking-app",
+  "version": "1.0.0",
+  "description": "This is a Hotel Booking Application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Ahmed Sazzad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedsgit/Hotel-Booking-Application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmedsgit/Hotel-Booking-Application/issues"
+  },
+  "homepage": "https://github.com/ahmedsgit/Hotel-Booking-Application#readme"
+}
