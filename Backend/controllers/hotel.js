@@ -11,12 +11,14 @@ export const createHotel = async (req, res, next) => {
     }
 };
 
-export const updateHotel = async (req, res) => {
+export const updateHotel = async (req, res, next) => {
     try {
         const updateHotel = await Hotel.findByIdAndUpdate(
-            req.params.id,
-            { $set: req.body },
-            { new: true }
+            req.params.id, {
+                $set: req.body
+            }, {
+                new: true
+            }
         );
         res.status(200).json(updateHotel);
     } catch (error) {
@@ -24,7 +26,7 @@ export const updateHotel = async (req, res) => {
     }
 };
 
-export const deleteHotel = async (req, res) => {
+export const deleteHotel = async (req, res, next) => {
     try {
         await Hotel.findByIdAndDelete(req.params.id);
         res.status(200).json('Hotel Deleted Successfully');
@@ -33,7 +35,7 @@ export const deleteHotel = async (req, res) => {
     }
 };
 
-export const getHotel = async (req, res) => {
+export const getHotel = async (req, res, next) => {
     try {
         const hotel = await Hotel.findById(req.params.id);
         res.status(200).json(hotel);

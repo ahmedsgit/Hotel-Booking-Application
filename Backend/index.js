@@ -1,4 +1,5 @@
 // external import
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import express from "express";
 import mongoose from "mongoose";
@@ -29,6 +30,7 @@ mongoose.connection.on("connected", () => {
 
 // middlewares
 app.use(express.json());
+app.use(cookieParser());
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
@@ -42,7 +44,7 @@ app.use((err, req, res, next) => {
         status: errorStatus,
         message: errorMessage,
         stack: err.stack,
-    })
+    });
 });
 
 app.listen(process.env.PORT, () => {
